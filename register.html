@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      .form-container {
+        max-width: 50%;
+        width: 100%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 5%;
+      }
+
+      .form-group div {
+        width: 100%;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .img-preview {
+        margin-top: 10px;
+        max-width: 100px;
+        max-height: 100px;
+      }
+      .button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        background-color: #007cef;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #0067c7;
+      }
+      @media (max-width: 600px) {
+        .form-group {
+          flex-direction: column;
+        }
+        .form-group div {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 style="text-align: center;">Register</h2>
+      <form id="registerForm" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="phone">Nomor HP:</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div>
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address" required></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender" required>
+              <option value="">Pilih</option>
+              <option value="male">Laki-laki</option>
+              <option value="female">Perempuan</option>
+            </select>
+          </div>
+          <div>
+            <label for="photo">Foto:</label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div>
+            <label for="confirm_password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="button">Register</button>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
